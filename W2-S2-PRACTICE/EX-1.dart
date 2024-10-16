@@ -21,9 +21,9 @@ class Employee {
 
   Employee(this._name, this._skills, this._address, this._yearsOfExperience);
 
-  Employee.mobileDeveloper(this._name, this._address, this._yearsOfExperience) {
-    _skills = [Skill.DART, Skill.FLUTTER, Skill.OTHER];
-  }
+  Employee.mobileDeveloper(this._name, this._address, this._yearsOfExperience, this._skills);
+  // _skills = [Skill.DART, Skill.FLUTTER, Skill.OTHER];
+
   void yearEXPSalary() {
     this._baseSalary = _baseSalary + (_yearsOfExperience! * 2000);
   }
@@ -42,7 +42,7 @@ class Employee {
 
   void printDetails() {
     print('Employee: $_name, Base Salary: \$${_baseSalary}');
-    print('Year experience: $_yearsOfExperience');
+    print('Year experience: ${_yearsOfExperience} year');
     print('Skill :$_skills');
     print("Address :$_address");
   }
@@ -55,8 +55,7 @@ void main() {
   emp1.skillbonus();
   emp1.printDetails();
   print("\n");
-  var emp2 = Employee.mobileDeveloper("Chetra", address, 5);
-  emp2._skills = [Skill.FLUTTER];
+  var emp2 = Employee.mobileDeveloper("Chetra", address, 5, [Skill.FLUTTER]);
   emp2.yearEXPSalary();
   emp2.skillbonus();
   emp2.printDetails();
