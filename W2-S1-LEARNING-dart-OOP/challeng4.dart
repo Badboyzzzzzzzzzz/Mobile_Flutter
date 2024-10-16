@@ -16,5 +16,5 @@ class Distance {
 void main() {
   Distance d1 = Distance.kms(3.4);
   Distance d2 = Distance.meters(10000);
-  print((d1 + d2).kms);
+  print('${(d1 + d2).kms}km');
 }
