@@ -4,6 +4,10 @@ class Tree {
   double height;
 
   Tree(this.type, this.height);
+  @override
+  String toString() {
+    return "${type} height ${height}";
+  }
 }
 
 class Window {
@@ -25,6 +29,16 @@ class Roof {
   }
 }
 
+enum Room {
+  Bedroom,
+  Bathroom,
+  kitchen;
+
+  // int getNumberOfTypes() {
+  //   return Room.values.length;
+  // }
+}
+
 class Door {
   int height;
   int width;
@@ -40,12 +54,13 @@ class Door {
 // Class House
 class House {
   String address;
+  List<Room> rooms;
   List<Tree> trees = []; // by default empty
   Door door;
   Window window;
   Roof roof;
 
-  House(this.address, this.door, this.roof, this.window);
+  House(this.address, this.door, this.roof, this.window, this.rooms);
 
   void addTree(Tree newTree) {
     this.trees.add(newTree);
@@ -56,7 +71,8 @@ class House {
     print("${window}");
     print("${door}");
     print("Address: ${address}");
-
+    print(trees);
+    print("we have ${rooms}");
   }
 }
 
@@ -64,6 +80,8 @@ void main() {
   Door door = Door(3, "wood", 1, "bottomLeft");
   Window window = Window("red", 'leftSide');
   Roof roof = Roof('Triangle');
-  House house = House("CCV", door, roof, window);
+  Tree newTree = Tree('Apple', 3);
+  House house = House("CCV", door, roof, window, Room.values);
+  house.addTree(newTree);
   house.myHouse();
 }
