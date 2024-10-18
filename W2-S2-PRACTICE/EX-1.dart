@@ -21,8 +21,25 @@ class Employee {
 
   Employee(this._name, this._skills, this._address, this._yearsOfExperience);
 
-  Employee.mobileDeveloper(this._name, this._address, this._yearsOfExperience, this._skills);
-  // _skills = [Skill.DART, Skill.FLUTTER, Skill.OTHER];
+  Employee.mobileDeveloper(
+      this._name, this._address, this._yearsOfExperience, this._skills);
+
+  String get name {
+    return _name!;
+  }
+
+  double get salary {
+    return this._baseSalary;
+  }
+
+  List<Skill> get skills {
+    return this._skills!;
+  }
+
+  Address get address => this._address!;
+  
+  int get yearOfExperience => this._yearsOfExperience!;
+
 
   void yearEXPSalary() {
     this._baseSalary = _baseSalary + (_yearsOfExperience! * 2000);
