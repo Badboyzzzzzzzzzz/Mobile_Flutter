@@ -42,8 +42,7 @@ class Bank {
 
   Bank(this._bankName, this._location);
 
-  BankAccount createAccount(
-      int accountId, double balances, String accountOwner, String branchCode) {
+  BankAccount createAccount(int accountId, double balances, String accountOwner, String branchCode) {
     for (var account in _accounts!) {
       if (account.accountId == accountId) {
         throw Exception(
